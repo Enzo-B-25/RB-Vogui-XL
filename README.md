@@ -30,7 +30,7 @@ python3 yolo2d.py
    /yolo/image_annotated
    ```
 
-![Exemple YOLO 2D](images/yolo2d_result.png)
+![Exemple YOLO 2D](images/yolo3d_result.png)
 
 ---
 
@@ -58,6 +58,6 @@ python3 yolo3d.py
    /yolo/marker
    ```
 
-![Exemple YOLO 3D](images/yolo3d_result.png)
+![Exemple YOLO 3D](images/yolo2d_result.png)
 
 ---
