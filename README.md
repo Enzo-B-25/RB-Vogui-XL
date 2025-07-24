@@ -61,3 +61,14 @@ python3 yolo3d.py
 ![Exemple YOLO 3D](images/yolo2d_result.png)
 
 ---
+
+**Lancement :**
+```bash
+roslaunch pkg_transm_cohoma rtabmap_vogui.launch
+```
+
+```bash
+rtabmap-databaseViewer /home/robot/.ros/rtabmap.db
+```
+
+
