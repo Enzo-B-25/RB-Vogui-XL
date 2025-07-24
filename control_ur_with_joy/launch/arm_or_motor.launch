@@ -1,0 +1,9 @@
+<launch>
+    <!-- Lancement du noeud choice_joy sans logs -->
+    <node name="choice_joy" pkg="control_ur_with_joy" type="choice_joy.py">
+    </node>
+
+    <!-- Lancement du noeud ur_joy_control_origine sans logs -->
+    <node name="ur_joy_control_origine" pkg="control_ur_with_joy" type="ur_joy_contro_origine.py">
+    </node>
+</launch>

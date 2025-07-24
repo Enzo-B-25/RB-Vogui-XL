@@ -1,0 +1,24 @@
+robot@shrxl-230308ab:~/catkin_ws/src/robot_packages/pkg_transm_cohoma/src/Tests commandes$ python3 test_robot_stream.py 
+[Robot] Reçu commande de type : 1
+[DEBUG] IP = 192.168.1.42, Port = 5000, Caméra = /dev/video2
+[DEBUG] Lancement GStreamer :
+gst-launch-1.0 -v v4l2src device=/dev/video2 ! video/x-raw ! videoconvert ! queue max-size-buffers=1 ! x264enc tune=zerolatency speed-preset=superfast ! rtph264pay ! udpsink host=192.168.1.42 port=5000 sync=false
+robot@shrxl-230308ab:~/catkin_ws/src/robot_packages/pkg_transm_cohoma/src/Tests commandes$ Setting pipeline to PAUSED ...
+Pipeline is live and does not need PREROLL ...
+Setting pipeline to PLAYING ...
+New clock: GstSystemClock
+/GstPipeline:pipeline0/GstV4l2Src:v4l2src0.GstPad:src: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, format=(string)YUY2, pixel-aspect-ratio=(fraction)1/1, colorimetry=(string)2:4:5:1, interlace-mode=(string)progressive
+/GstPipeline:pipeline0/GstCapsFilter:capsfilter0.GstPad:src: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, format=(string)YUY2, pixel-aspect-ratio=(fraction)1/1, colorimetry=(string)2:4:5:1, interlace-mode=(string)progressive
+/GstPipeline:pipeline0/GstVideoConvert:videoconvert0.GstPad:src: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, pixel-aspect-ratio=(fraction)1/1, interlace-mode=(string)progressive, format=(string)Y42B
+/GstPipeline:pipeline0/GstQueue:queue0.GstPad:sink: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, pixel-aspect-ratio=(fraction)1/1, interlace-mode=(string)progressive, format=(string)Y42B
+/GstPipeline:pipeline0/GstQueue:queue0.GstPad:src: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, pixel-aspect-ratio=(fraction)1/1, interlace-mode=(string)progressive, format=(string)Y42B
+Redistribute latency...
+/GstPipeline:pipeline0/GstX264Enc:x264enc0.GstPad:sink: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, pixel-aspect-ratio=(fraction)1/1, interlace-mode=(string)progressive, format=(string)Y42B
+/GstPipeline:pipeline0/GstVideoConvert:videoconvert0.GstPad:sink: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, format=(string)YUY2, pixel-aspect-ratio=(fraction)1/1, colorimetry=(string)2:4:5:1, interlace-mode=(string)progressive
+/GstPipeline:pipeline0/GstCapsFilter:capsfilter0.GstPad:sink: caps = video/x-raw, width=(int)1280, height=(int)960, framerate=(fraction)15/2, format=(string)YUY2, pixel-aspect-ratio=(fraction)1/1, colorimetry=(string)2:4:5:1, interlace-mode=(string)progressive
+/GstPipeline:pipeline0/GstX264Enc:x264enc0.GstPad:src: caps = video/x-h264, codec_data=(buffer)017a0020ffe1001d677a0020bcb402803cd80b501010140000030008000003007a3c60ca8001000468ef3cb0, stream-format=(string)avc, alignment=(string)au, level=(string)3.2, profile=(string)high-4:2:2, width=(int)1280, height=(int)960, pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)15/2, interlace-mode=(string)progressive, colorimetry=(string)bt709, chroma-site=(string)mpeg2
+/GstPipeline:pipeline0/GstRtpH264Pay:rtph264pay0.GstPad:src: caps = application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, packetization-mode=(string)1, profile-level-id=(string)7a0020, sprop-parameter-sets=(string)"Z3oAILy0AoA82AtQEBAUAAADAAgAAAMAejxgyoA\=\,aO88sA\=\=", payload=(int)96, ssrc=(uint)3583519455, timestamp-offset=(uint)1380510670, seqnum-offset=(uint)25065, a-framerate=(string)7.5
+/GstPipeline:pipeline0/GstUDPSink:udpsink0.GstPad:sink: caps = application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264, packetization-mode=(string)1, profile-level-id=(string)7a0020, sprop-parameter-sets=(string)"Z3oAILy0AoA82AtQEBAUAAADAAgAAAMAejxgyoA\=\,aO88sA\=\=", payload=(int)96, ssrc=(uint)3583519455, timestamp-offset=(uint)1380510670, seqnum-offset=(uint)25065, a-framerate=(string)7.5
+/GstPipeline:pipeline0/GstRtpH264Pay:rtph264pay0.GstPad:sink: caps = video/x-h264, codec_data=(buffer)017a0020ffe1001d677a0020bcb402803cd80b501010140000030008000003007a3c60ca8001000468ef3cb0, stream-format=(string)avc, alignment=(string)au, level=(string)3.2, profile=(string)high-4:2:2, width=(int)1280, height=(int)960, pixel-aspect-ratio=(fraction)1/1, framerate=(fraction)15/2, interlace-mode=(string)progressive, colorimetry=(string)bt709, chroma-site=(string)mpeg2
+/GstPipeline:pipeline0/GstRtpH264Pay:rtph264pay0: timestamp = 1380526902
+/GstPipeline:pipeline0/GstRtpH264Pay:rtph264pay0: seqnum = 25065

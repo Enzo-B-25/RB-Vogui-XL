@@ -1,0 +1,18 @@
+<launch>
+  <!-- Lancement du noeud choice_joy -->
+  <node name="choice_joy_vogui" pkg="pkg_transm_cohoma" type="choice_joy_vogui.py" output="screen" />
+
+  <!-- Lancement du noeud relai_DR -->
+  <node name="relai_DR" pkg="pkg_transm_cohoma" type="relai_DR.py" output="screen" />
+
+  <!-- Lancement du noeud Vogui_Controleur -->
+  <node name="Vogui_Controleur" pkg="pkg_transm_cohoma" type="Vogui_Controleur.py" output="screen" />
+
+  <node pkg="nmea_navsat_driver" type="nmea_serial_driver" name="gps_driver" output="screen">
+    <param name="port" value="/dev/ttyUSB_GPS" />
+    <param name="baud" value="57600" />
+    <param name="frame_id" value="gps" />
+  </node>
+
+</launch>
+
